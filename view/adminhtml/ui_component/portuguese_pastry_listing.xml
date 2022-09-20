@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">portuguese_pastry_listing.portuguese_pastry_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>portuguese_pastry_entity_columns</spinner>
+        <deps>
+            <dep>portuguese_pastry_listing.portuguese_pastry_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="portuguese_pastry_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+<!--            Storage config necessary to identify which field is the primary identifier for each record when cached.-->
+            <storageConfig>
+                <param name="indexField" xsi:type="string">portuguese_pastry_entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>PortuguesePastry_Grid::portuguese_pastry_grid</aclResource>
+        <dataProvider class="PortuguesePastry\Grid\Ui\DataProvider\PortuguesePastry\PortuguesePastryDataProvider" name="portuguese_pastry_listing_data_source">
+            <settings>
+                <requestFieldName>portuguese_pastry_entity_id</requestFieldName>
+                <primaryFieldName>portuguese_pastry_entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters">
+<!--            Filter name is set as field attribute for Filter class passed to DataProvider AddFilter()-->
+            <filterSelect name="tastiness" sortOrder="100" provider="${ $.parentName }">
+                <settings>
+                    <options class="PortuguesePastry\Grid\Ui\Component\Listing\TastinessOptions"/>
+                    <label translate="true">Tastiness</label>
+<!--                    DataScope indicates which field within the returned data object will be hosted in this column-->
+                    <dataScope>tastiness</dataScope>
+                </settings>
+            </filterSelect>
+<!--            Filter name is set as field attribute for Filter class passed to DataProvider AddFilter()-->
+            <filterSelect name="originality" sortOrder="110" provider="${ $.parentName }">
+                <settings>
+                    <options class="PortuguesePastry\Grid\Ui\Component\Listing\OriginalityOptions"/>
+                    <label translate="true">Originality</label>
+<!--                    DataScope indicates which field within the returned data object will be hosted in this column-->
+                    <dataScope>originality</dataScope>
+                </settings>
+            </filterSelect>
+<!--            Filter name is set as field attribute for Filter class passed to DataProvider AddFilter()-->
+            <filterSelect name="allergens" sortOrder="120" provider="${ $.parentName }">
+                <settings>
+                    <options class="PortuguesePastry\Grid\Ui\Component\Listing\AllergensOptions"/>
+                    <label translate="true">Allergens</label>
+<!--                    DataScope indicates which field within the returned data object will be hosted in this column-->
+                    <dataScope>allergens</dataScope>
+                </settings>
+            </filterSelect>
+<!--            Filter name is set as field attribute for Filter class passed to DataProvider AddFilter()-->
+            <filterInput name="flavour" sortOrder="130" provider="${ $.parentName }">
+                <settings>
+                    <label translate="true">Flavour</label>
+<!--                    DataScope indicates which field within the returned data object will be hosted in this column-->
+                    <dataScope>flavour</dataScope>
+                </settings>
+            </filterInput>
+        </filters>
+    </listingToolbar>
+    <columns name="portuguese_pastry_entity_columns">
+        <selectionsColumn name="ids" sortOrder="0">
+            <settings>
+                <indexField>portuguese_pastry_entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="portuguese_pastry_entity_id" sortOrder="10">
+            <settings>
+<!--                addfield is necessary-->
+                <addField>true</addField>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="name" sortOrder="20">
+            <settings>
+<!--                addfield is necessary-->
+                <addField>true</addField>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+        <column name="flavour" sortOrder="30">
+            <settings>
+<!--                addfield is necessary-->
+                <addField>true</addField>
+                <label translate="true">Flavour</label>
+            </settings>
+        </column>
+        <column name="tastiness" sortOrder="40">
+            <settings>
+<!--                addfield is necessary-->
+                <addField>true</addField>
+                <label translate="true">Tastiness</label>
+            </settings>
+        </column>
+        <column name="originality" sortOrder="50">
+            <settings>
+<!--                addfield is necessary-->
+                <addField>true</addField>
+                <label translate="true">Originality</label>
+            </settings>
+        </column>
+        <column name="allergens" sortOrder="60">
+            <settings>
+<!--                addfield is necessary-->
+                <addField>true</addField>
+                <label translate="true">Allergens</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

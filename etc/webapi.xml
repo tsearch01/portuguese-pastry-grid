@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Portuguese Pastry -->
+    <route url="/V1/portuguesePastry/" method="GET">
+        <service class="PortuguesePastry\Grid\Api\PortuguesePastryRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="PortuguesePastry_Grid::web_api"/>
+        </resources>
+    </route>
+    <route url="/V1/portuguesePastry/List/" method="GET">
+        <service class="PortuguesePastry\Grid\Api\PortuguesePastryRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="PortuguesePastry_Grid::web_api"/>
+        </resources>
+    </route>
+    <route url="/V1/portuguesePastry/DeleteById/" method="POST">
+        <service class="PortuguesePastry\Grid\Api\PortuguesePastryRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="PortuguesePastry_Grid::web_api"/>
+        </resources>
+    </route>
+    <route url="/V1/portuguesePastry/Delete/" method="POST">
+        <service class="PortuguesePastry\Grid\Api\PortuguesePastryRepositoryInterface" method="delete"/>
+        <resources>
+            <resource ref="PortuguesePastry_Grid::web_api"/>
+        </resources>
+    </route>
+    <route url="/V1/portuguesePastry/Create/" method="POST">
+        <service class="PortuguesePastry\Grid\Api\PortuguesePastryRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="PortuguesePastry_Grid::web_api"/>
+        </resources>
+    </route>
+</routes>

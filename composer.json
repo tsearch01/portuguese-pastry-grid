@@ -1,0 +1,25 @@
+{
+  "name": "portuguese-pastry/grid",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "version": "1.0.0",
+  "type": "magento2-module",
+  "authors": [
+    {
+      "name": "tsearch",
+      "email": "tsearch01@gmail.com"
+    }
+  ],
+  "require": {
+    "portuguese-pastry/grid": "1.0.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "PortuguesePastry\\Grid\\": ""
+    }
+  }
+}

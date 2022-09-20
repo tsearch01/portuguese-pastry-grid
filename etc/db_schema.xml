@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="portuguese_pastry_entity" resource="default" engine="innodb" comment="Portuguese Pastry Table">
+        <column xsi:type="int" name="portuguese_pastry_entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="unique identifier"/>
+        <column xsi:type="varchar" name="name" nullable="false" comment="Name"/>
+        <column xsi:type="varchar" name="flavour" nullable="true" comment="Flavour profile"/>
+        <column xsi:type="int" name="tastiness" padding="10" unsigned="true" nullable="false" comment="Tastiness rating"/>
+        <column xsi:type="int" name="originality" padding="10" unsigned="true" nullable="false" comment="Originality rating"/>
+        <column xsi:type="boolean" name="allergens" nullable="false" comment="Contains Allergens"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="portuguese_pastry_entity_id"/>
+        </constraint>
+        <index referenceId="PORTUGUESE_PASTRY_ENTITY_ID" indexType="btree">
+            <column name="portuguese_pastry_entity_id"/>
+        </index>
+        <index referenceId="PORTUGUESE_PASTRY_ENTITY_NAME" indexType="btree">
+            <column name="name"/>
+        </index>
+        <index referenceId="PORTUGUESE_PASTRY_ALLERGENS" indexType="btree">
+            <column name="allergens"/>
+        </index>
+        <index referenceId="PORTUGUESE_PASTRY_TASTINESS" indexType="btree">
+            <column name="tastiness"/>
+        </index>
+        <index referenceId="PORTUGUESE_PASTRY_ORIGINALITY" indexType="btree">
+            <column name="originality"/>
+        </index>
+    </table>
+</schema>

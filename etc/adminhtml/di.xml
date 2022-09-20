@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="PortuguesePastry\Grid\Ui\DataProvider\PortuguesePastry\PortuguesePastryDataProvider">
+        <arguments>
+            <argument name="addFilterStrategies" xsi:type="array">
+                <item name="flavour" xsi:type="object">PortuguesePastry\Grid\Ui\DataProvider\Attributes\AddFlavourToCollection</item>
+                <item name="tastiness" xsi:type="object">PortuguesePastry\Grid\Ui\DataProvider\Attributes\AddTastinessToCollection</item>
+                <item name="originality" xsi:type="object">PortuguesePastry\Grid\Ui\DataProvider\Attributes\AddOriginalityToCollection</item>
+                <item name="allergens" xsi:type="object">PortuguesePastry\Grid\Ui\DataProvider\Attributes\AddAllergensToCollection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

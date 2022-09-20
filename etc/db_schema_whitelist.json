@@ -1,0 +1,22 @@
+{
+    "portuguese_pastry_entity": {
+        "column": {
+            "portuguese_pastry_entity_id": true,
+            "name": true,
+            "flavour": true,
+            "tastiness": true,
+            "originality": true,
+            "allergens": true
+        },
+        "index": {
+            "PORTUGUESE_PASTRY_ENTITY_PORTUGUESE_PASTRY_ENTITY_ID": true,
+            "PORTUGUESE_PASTRY_ENTITY_NAME": true,
+            "PORTUGUESE_PASTRY_ENTITY_ALLERGENS": true,
+            "PORTUGUESE_PASTRY_ENTITY_TASTINESS": true,
+            "PORTUGUESE_PASTRY_ENTITY_ORIGINALITY": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

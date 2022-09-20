@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="PortuguesePastry_Grid::pastry_grid_page" title="Portuguese Pastries" translate="title" module="PortuguesePastry_Grid" parent="Magento_CatalogRule::promo" action="portuguese_pastry/grid/index" sortOrder="100" resource="PortuguesePastry_Grid::portuguese_pastry_grid"/>
+    </menu>
+</config>

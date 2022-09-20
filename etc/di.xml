@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="PortuguesePastry\Grid\Api\PortuguesePastryRepositoryInterface" type="PortuguesePastry\Grid\Model\PortuguesePastryRepository"/>
+    <preference for="PortuguesePastry\Grid\Api\Data\PortuguesePastryInterface" type="PortuguesePastry\Grid\Model\PortuguesePastry"/>
+    <preference for="PortuguesePastry\Grid\Api\Data\PortuguesePastrySearchResultsInterface" type="PortuguesePastry\Grid\Model\PortuguesePastrySearchResults"/>
+</config>
